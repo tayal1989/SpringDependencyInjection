@@ -6,30 +6,16 @@
   http://www.springframework.org/schema/beans/spring-beans.xsd 
   http://www.springframework.org/schema/context/ 
   http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean id = "mathCheatObjectValue" class = "com.learning.objectvalue.MathCheat"></bean>
 
-	<bean id = "student" class = "com.learning.literalvalue.Student">
-		<property name = "studentName" value="Vishal Agarwal"></property>
-		<property name = "id" value="1"></property>	
-		<constructor-arg name = "boardExam" value = "CBSE" type="String"></constructor-arg>
-		<constructor-arg name = "fees" value = "20000.0f" type="float"></constructor-arg>
+	<bean id = "student" class = "com.learning.objectvalue.Student">
+		<property name="id" value = "1001"></property>
+		<property name = "mathCheat" ref = "mathCheatObjectValue" />
 	</bean>
 
-	<bean id = "student1" class = "com.learning.literalvalue.Student">
-		<property name = "studentName" value="Naina"></property>
-		<property name = "id" value="2"></property>	
-		<constructor-arg name = "boardExam" value = "ICSE" type="String"></constructor-arg>
-		<constructor-arg name = "fees" value = "30000.0f" type="float"></constructor-arg>
-	</bean>
-
-	<bean id = "completeStudent" class = "com.learning.literalvalue.Student">
-		<constructor-arg name = "studentName" value="Myra" type="String"></constructor-arg>
-		<constructor-arg name = "id" value="2" type="int"></constructor-arg>	
-		<constructor-arg name = "boardExam" value = "CBSE" type="String"></constructor-arg>
-		<constructor-arg name = "fees" value = "40000.0f" type="float"></constructor-arg>
-	</bean>
-
-	<bean id = "incompleteStudent" class = "com.learning.literalvalue.Student">
-		<constructor-arg name = "studentName" value="Puja" type="String"></constructor-arg>
+	<bean id = "anotherStudent" class = "com.learning.objectvalue.AnotherStudent">
+		<property name = "mathCheat" ref = "mathCheatObjectValue" />
 	</bean>
 
 </beans>
