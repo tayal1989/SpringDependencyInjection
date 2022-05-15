@@ -9,6 +9,6 @@ public class AnotherStudent {
 	}
 
 	public void cheating() {
-		mathCheat.mathCheat();
+		mathCheat.cheat();
 	}
 }
