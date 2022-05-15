@@ -7,16 +7,12 @@
   http://www.springframework.org/schema/context/ 
   http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean id = "mathCheatObjectValue" class = "com.learning.objectvalue.MathCheat"></bean>
-	<bean id = "scienceCheatObjectValue" class = "com.learning.objectvalue.ScienceCheat"></bean>
+	<bean id = "missedCallAlertObjectValue" class = "com.learning.objectvalue.MissedCallAlertService"></bean>
+	<bean id = "dataServiceObjectValue" class = "com.learning.objectvalue.DataService"></bean>
+	<bean id = "helloTuneServiceObjectValue" class = "com.learning.objectvalue.HelloTuneService"></bean>
 
-	<bean id = "student" class = "com.learning.objectvalue.Student">
-		<property name="id" value = "1001"></property>
-		<property name = "cheat" ref = "scienceCheatObjectValue" />
-	</bean>
-
-	<bean id = "anotherStudent" class = "com.learning.objectvalue.AnotherStudent">
-		<property name = "mathCheat" ref = "mathCheatObjectValue" />
+	<bean id = "airtel" class = "com.learning.objectvalue.Airtel">
+		<property name = "service" ref = "helloTuneServiceObjectValue" />
 	</bean>
 
 </beans>
