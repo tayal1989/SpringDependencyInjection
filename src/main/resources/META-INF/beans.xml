@@ -13,46 +13,19 @@
         http://www.springframework.org/schema/mvc 
         http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
-	<context:annotation-config />
-	
-	<!-- Learning autowiring by name -->
-<!-- 
-	<bean id = "heart" class = "com.learning.autowiring.Heart"></bean>
-	<bean id = "human" class = "com.learning.autowiring.Human" autowire="byName"></bean>
--->
+	<context:annotation-config></context:annotation-config>
+	<context:property-placeholder location="classpath:student-info.properties"/>
 
-	<!-- Learning autowiring by type -->
-<!-- 
-	<bean id = "heartObject" class = "com.learning.autowiring.Heart"></bean>
-	<bean id = "human" class = "com.learning.autowiring.Human" autowire="byType"></bean>
--->
+	<bean id = "student" class = "com.learning.learningvaluesrequired.Student" />
 
-	<!-- Learning autowiring by constructor -->
 <!-- 
-	<bean id = "heartObject" class = "com.learning.autowiring.Heart"></bean>
-	<bean id = "human" class = "com.learning.autowiring.Human" autowire="constructor"></bean>
--->
+	<context:property-placeholder location="classpath:student-info.properties"/>
 
-	<!-- Learning autowiring by autowired -->
-	<!-- First spring will check by type, now here, there are two classes of heart 
-so it will get confused so it will check reference by name and here heart is matching 
-variable name of heart present in human class so it will work -->
-<!-- 
-	<bean id = "heart" class = "com.learning.autowiring.Heart"></bean>
-	<bean id = "octopusHeart" class = "com.learning.autowiring.Heart"></bean>
-	<bean id = "human" class = "com.learning.autowiring.Human"></bean>
--->
-
-	<bean id = "humanHeart" class = "com.learning.autowiring.Heart">
-		<property name="nameOfAnimal" value="Human"></property>	
-		<property name="noOfHearts" value="1"></property>	
+	<bean id = "student" class = "com.learning.learningvaluesrequired.Student">
+		<property name="name" value="${student.name}"></property>	
+		<property name="interestedCourse" value="${student.interested.course}"></property>
+		<property name="hobby" value="${student.hobby}"></property>
 	</bean>
-
-	<bean id = "octopusHeart" class = "com.learning.autowiring.Heart">
-		<property name="nameOfAnimal" value="Octopus"></property>	
-		<property name="noOfHearts" value="3"></property>
-	</bean>
-
-	<bean id = "human" class = "com.learning.autowiring.Human"></bean>
+-->
 
 </beans>

@@ -1,15 +1,15 @@
-package com.learning.autowiring;
+package com.learning.learningvaluesrequired;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Body {
+public class Client {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/beans.xml");
 		System.out.println("beans.xml file loaded");
-		Human human = context.getBean("human", Human.class);
-		human.startPumping();
+		Student student = context.getBean("student", Student.class);
+		student.displayStudentInfo();
 		
 		((ClassPathXmlApplicationContext) context).close();
 	}
